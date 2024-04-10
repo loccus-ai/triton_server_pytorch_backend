@@ -20,5 +20,12 @@ $ cd ...
 docker build . -t tritonserver-loccus:24.03-py3
 ```
 
+## Publish image to register
+
+```
+gcloud auth login
+gcloud auth configure-docker europe-docker.pkg.dev
+docker tag <image tag, for example: 4f00c79d1c09> europe-docker.pkg.dev/loccus-platform/third-party-images/tritonserver:24.03-custom
+docker push europe-docker.pkg.dev/loccus-platform/third-party-images/tritonserver:24.03-custom
 
 
